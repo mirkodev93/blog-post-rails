@@ -1,0 +1,34 @@
+<section class="blog">
+    <%= image_tag @blog.image if @blog.image.attached? %>
+</section>
+
+<section class="blog blog-info">
+    <% cache @blog do %>
+        <h1><%= @blog.title %></h1>
+    <% end %>
+</section>
+
+<%= @blog.content %>
+<p><em>Author: <%= @blog.author %></em></p>
+
+<h2>Comments</h2>
+<%= render @blog.comments %>
+
+<% if user_signed_in? %>
+    <h3>Add a comment</h3>
+    <%= form_with model: [@blog, Comment.new] do |f| %>
+        <%= f.label :commenter %>
+        <%= f.text_field :commenter %><br><br>
+
+        <%= f.label :comment %><br>
+        <%= f.rich_text_area :body %><br><br>
+
+        <%= f.submit "Post Comment" %>
+    <% end %>
+<% end %>
+
+<p><%= link_to "Back", blogs_path %></p>
+<% if user_signed_in? && (current_user.admin? || current_user.id == @blog.user_id) %>
+    <%= link_to "Edit", edit_blog_path(@blog) %>
+    <%= button_to "Delete", @blog, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% end %>

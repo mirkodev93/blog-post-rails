@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+}
+
+nav {
+  justify-content: flex-end;
+  display: flex;
+  font-size: 0.875em;
+  gap: 0.5rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav a {
+  display: inline-block;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.notice {
+  color: green;
+  background: #e6ffe6;
+  padding: 10px;
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .5rem, .75rem;
+}
+
+section.blog {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+section.blog img {
+  border-radius: 8px;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.alert {
+  color: red;
+  background: #ffe6e6;
+  padding: 10px;
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .5rem, .75rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.nav__brand a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+}
+
+.nav__links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #444;
+}
+
+.nav__links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  .nav__links {
+    width: 100%;
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+  }
+}
+
+.flash {
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+}
+
+.flash--success, .notice {
+  background: #e8fff1;
+  color: #0b6b3a;
+}
+
+.flash--danger, .alert {
+  background: #ffe8e8;
+  color: #8a0b0b;
+}
+
+.flash--info {
+  background: #e8f2ff;
+  color: #0b3a6b;
+}
+
+.errors {
+  border: 1px solid #f5c2c7;
+  background: #fff5f6;
+  color: #842029;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+
+.errors h4 {
+  margin: 0 0 .5rem;
+  font-size: 1rem;
+}
+
+.errors ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.field {
+  margin-bottom: .75rem;
+}
+
+.field label {
+  display: line-block;
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+
+.actions {
+  margin-top: 1rem;
+}

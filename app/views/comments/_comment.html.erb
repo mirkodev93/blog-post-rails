@@ -1,0 +1,7 @@
+<div class="comment">
+  <p><strong><%= comment.commenter %>:</strong> <%= comment.body %></p>
+  <% if user_signed_in? && (current_user.admin? || current_user.id == comment.user_id) %>
+  <%= link_to "Delete", [comment.blog, comment],
+        data: { turbo_method: :delete, turbo_confirm: "Delete this comment?" } %>
+  <% end %>
+</div>
